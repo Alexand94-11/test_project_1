@@ -15,7 +15,19 @@ class Employee:
 
 # Расширьте класс Employee, создав классы FullTimeEmployee и PartTimeEmployee.
 
+
 class FullTimeEmployee(Employee):
+    def get_unpaid_vacation(self, start_date, vacation_length):
+        return (f'Начало неоплачиваемого отпуска: {start_date}, '
+                f'продолжительность: {vacation_length} дней.')
+
+
+class PartTimeEmployee(Employee):
+    vacation_days = 14
+
+    def __init__(self, first_name, second_name, gender):
+        super().__init__(first_name, second_name, gender)
+        self.remaining_vacation_days = PartTimeEmployee.vacation_days
 
 
 # Пример использования:
