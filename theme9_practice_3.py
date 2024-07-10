@@ -35,6 +35,16 @@ class User:
         except ValueError:
             print('Некорректное имя пользователя')
 
+    '''
+    # Метод класса with_username, который пропускает тренажер:
+    @classmethod
+    def with_username(cls, username):
+        if not User.is_username_allowed(username):
+                raise ValueError('Некорректное имя пользователя')
+        else:
+            return User(None, None, username)
+    '''
+
     # Опишите статический метод класса is_username_allowed.
     @staticmethod
     def is_username_allowed(username: str):
